@@ -9,6 +9,13 @@ html {
   height: 100%;
   padding: 16px;
   box-sizing: border-box;
+
+  max-width: 1500px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr 1fr 5fr 1fr;
+  gap: 15px;
 }
 
 .container div {
@@ -22,14 +29,22 @@ html {
 
 .header {
   background-color: #006157;
+  grid-column: 1/-1;
 }
 
 .sidebar {
   background-color: #005B94;
+  grid-column: 1;
+  grid-row: 2/4;
+
+  /* or using span */
+  /* Start at 2 and then span 2 rows including the starting row */
+  /* grid-row: 2 / span 2; */
 }
 
 .nav {
   background-color: #642cde;
+  grid-column: 2;
 }
 
 .article {
@@ -38,6 +53,7 @@ html {
 
 .footer {
   background-color: #393f4d;
+  grid-column: 1/-1;
 }
 
 .article p {
